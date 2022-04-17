@@ -32,22 +32,12 @@ public class APIResource {
     @Inject
     DatabaseRepository repository;
 
-    @PostConstruct
-    public void init() {
-        Manufacturer bmw = new Manufacturer("BMW");
-        Manufacturer audi = new Manufacturer("Audi");
-        Manufacturer nissan = new Manufacturer("Nissan");
-        repository.addNewCar(new Car(bmw, "E21", 15100.00D));
-        repository.addNewCar(new Car(bmw, "E36", 38868.00D));
-        repository.addNewCar(new Car(bmw, "E39", 05500.00D));
-        repository.addNewCar(new Car(bmw, "G30", 48400.00D));
-        repository.addNewCar(new Car(audi, "A8 D2", 40350.00D));
-        repository.addNewCar(new Car(audi, "A8 D3", 63560.00D));
-        repository.addNewCar(new Car(audi, "A8 D5", 39320.00D));
-        repository.addNewCar(new Car(nissan, "NV400", 27715.00D));
-        repository.addNewCar(new Car(nissan, "200SX S13", 21325.00D));
-        repository.addNewCar(new Car(nissan, "200SX S14", 26510.00D));
-        System.out.println("Database initialized");
+
+    @GET
+    @Path("init")
+    public String init() {
+        repository.init();
+        return "Database initialized";
     }
 
     @GET
@@ -61,7 +51,7 @@ public class APIResource {
     @POST
     @Path("login")
     @PermitAll
-    @Produces(MediaType.TEXT_PLAIN)
+    @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public Response login(LoginModel loginModel) {
         String hashedPassword = HashUtil.hashString(loginModel.password);

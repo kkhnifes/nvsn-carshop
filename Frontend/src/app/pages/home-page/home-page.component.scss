@@ -21,9 +21,16 @@
     width: 16em;
     height: 10em;
     margin: .5em;
+    border: medium solid black;
+}
+
+.price {
+   color: lawngreen;
 }
 
 .car-item > button {
-    background-color: #ffbee6;
+    background-color: white;
     margin: .5em;
+    color: black;
+    border: medium solid black;
 }

@@ -8,16 +8,15 @@
     font-size: 3em;
     text-align: center;
     margin-bottom: 2em;
-    animation: text-focus-in 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
 }
 
 #login-card {
-    width: 15em;
+    border: medium solid black;
+    width: 50em;
     height: auto;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    animation: appear .5s ease-in-out 0s 1 alternate;
 }
 
 .form-input {
@@ -25,10 +24,11 @@
 }
 
 #login-button {
+    border: medium solid black;
     position: relative;
     bottom: 0;
     width: 100%;
-    background-color: #FC00FF;
+    color: black;
 }
 
 #register-link {
@@ -40,32 +40,7 @@
 }
 
 #register-link > a {
-    color: #FC00FF;
+    color: black;
     text-decoration: none;
 }
-
-/* Animations */
-@keyframes appear {
-    from {
-        opacity: 0%;
-        transform: translate(-50%, 1em);
-    }
-    to {
-        opacity: 100%;
-        transform: translate(-50%, 0em);
-    }
-}
-
-@keyframes text-focus-in {
-    0% {
-      -webkit-filter: blur(6px);
-              filter: blur(6px);
-      opacity: 0;
-    }
-    100% {
-      -webkit-filter: blur(0px);
-              filter: blur(0px);
-      opacity: 1;
-    }
-  }
 

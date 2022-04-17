@@ -18,7 +18,7 @@ export class LoginResult {
 })
 export class RestService {
 
-    private api: string = "<UNDEF>";
+    private api: string = "http://localhost:8080/api/carshop/";
 
     constructor(private client: HttpClient, private snack: MatSnackBar) {
         this.api = environment.apiUrl;

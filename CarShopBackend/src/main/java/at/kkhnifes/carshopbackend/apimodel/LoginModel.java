@@ -6,7 +6,6 @@ public class LoginModel {
     public String password;
 
     public static class LoginResult {
-        /* much wow */
         public String token;
 
         public LoginResult(String jwt) {

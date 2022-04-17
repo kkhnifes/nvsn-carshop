@@ -27,7 +27,7 @@ public class Car {
         return this.id;
     }
 
-    public Manufacturer getMake() {
+    public Manufacturer getManufacturer() {
         return this.manufacturer;
     }
 

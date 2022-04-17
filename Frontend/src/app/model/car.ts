@@ -1,5 +1,6 @@
-import { Make } from "./make";
+import {Manufacturer} from "./manufacturer";
 
 export class Car {
-    constructor(public make: Make, public model: string, public price: number) { }
+    constructor(public id: number, public manufacturer: Manufacturer, public model: string, public price: number) {
+    }
 }
