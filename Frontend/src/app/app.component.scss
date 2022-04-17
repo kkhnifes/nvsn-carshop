@@ -1,0 +1,38 @@
+#toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #04c8eb;
+    background-image: linear-gradient(90deg, #04c8eb 0%, #FC00FF 100%);
+}
+
+#toolbar > * {
+    margin-left: 2em;
+}
+
+.toolbar-item > button {
+    font-weight: 800;
+    width: 100%;
+}
+
+#account {
+    position: absolute;
+    right: 0;
+    width: 12em;
+    margin-right: 2em;
+}
+
+#account-name {
+    overflow: hidden;
+    font-size: 1em;
+}
+
+#account-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#logout {
+    line-height: .8em;
+}

@@ -1,0 +1,71 @@
+#content-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+#title {
+    padding-top: 2em;
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 2em;
+    animation: text-focus-in 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+}
+
+#login-card {
+    width: 15em;
+    height: auto;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: appear .5s ease-in-out 0s 1 alternate;
+}
+
+.form-input {
+    width: 100%;
+}
+
+#login-button {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    background-color: #FC00FF;
+}
+
+#register-link {
+    margin-top: 1em;
+    display: flex;
+    flex-direction: row;
+    font-size: .8em;
+    justify-content: space-between;
+}
+
+#register-link > a {
+    color: #FC00FF;
+    text-decoration: none;
+}
+
+/* Animations */
+@keyframes appear {
+    from {
+        opacity: 0%;
+        transform: translate(-50%, 1em);
+    }
+    to {
+        opacity: 100%;
+        transform: translate(-50%, 0em);
+    }
+}
+
+@keyframes text-focus-in {
+    0% {
+      -webkit-filter: blur(6px);
+              filter: blur(6px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-filter: blur(0px);
+              filter: blur(0px);
+      opacity: 1;
+    }
+  }
+

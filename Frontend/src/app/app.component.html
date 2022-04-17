@@ -1,0 +1,17 @@
+<mat-toolbar color="primary" id="toolbar">
+    <span>Car Shop :)</span>
+    <span id="home" class="toolbar-item">
+        <button mat-button (click)="navigateHome()">Home</button>
+    </span>
+    <span id="account" class="toolbar-item">
+        <button mat-button (click)="navigateLogin()" *ngIf="currentUser == undefined">Login</button>
+        <div id="account-details" *ngIf="currentUser != undefined">
+            <p id="account-name">Logged in as {{ currentUser.name }}</p>
+            <button mat-button (click)="performLogout()">
+                <mat-icon id="logout">logout</mat-icon>
+            </button>
+        </div>
+    </span>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

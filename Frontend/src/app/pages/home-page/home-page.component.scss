@@ -1,0 +1,29 @@
+#content-wrapper {
+    width: 100%;
+    height: 100%;
+}
+
+#title {
+    padding-top: 2em;
+    font-size: 3em;
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+#car-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.car-item {
+    width: 16em;
+    height: 10em;
+    margin: .5em;
+}
+
+.car-item > button {
+    background-color: #ffbee6;
+    margin: .5em;
+}
