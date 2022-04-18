@@ -1,7 +1,29 @@
 services:
-  backend:
+  database:
+    container_name: carshop_database
     build: ./database
     ports:
       - "4500:3306"
     environment:
       - MYSQL_ROOT_PASSWORD=server
+    networks:
+      - car-shop-net
+    
+  quarkus:
+    container_name: carshop_backend
+    ports:
+      - "8080:8080"
+    build:
+      context: ./CarShopBackend
+      dockerfile: ./src/main/docker/Dockerfile.native
+    networks:
+      - car-shop-net
+    depends_on:
+      - database
+    environment:
+      - PORT=8080
+      - QUARKUS_DATASOURCE_URL=jdbc:mysql://database:4500/carshop
+      - MYSQL_ROOT_PASSWORD=server
+networks:
+  car-shop-net:
+    driver: bridge
